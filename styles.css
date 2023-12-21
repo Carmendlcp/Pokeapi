@@ -14,7 +14,10 @@ h1{
 }
 
 .nav{
-    margin-left: 150px;
+    margin-left: 200px;
+    opacity: 1;
+    display: flex;
+    flex-wrap: wrap; 
 }
 
 ol{
@@ -24,18 +27,20 @@ ol{
 }
 
 li{
-    background-color: rgb(249, 141, 141);
+    background-color: rgb(164, 149, 248);
     padding: 5px;
     margin: 10px;
     border: 3px solid black;
     list-style: none;
     width: 200px;
     height: 300px;
-    transition: transform 0.3s ease; 
+    transition: transform 0.4s ease; 
+    transition: background-color 0.5s ease;
 }
 
 li:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
+    background-color: #543ff6;
 }
 
 li .id {
@@ -43,7 +48,7 @@ li .id {
     justify-content: center; 
     align-items: center; 
     color: #ffcc00;
-    margin-top: 30px;
+    margin-top: 30px;    
 }
   
 li .img {
@@ -52,6 +57,9 @@ li .img {
     display: flex;
     justify-content: center; 
     align-items: center; 
+    border: 6px groove rgb(210, 22, 5);
+    background-color: rgb(245, 208, 160);
+    
   }
   
 li .nombre {
@@ -68,12 +76,13 @@ li .tipos {
     display: flex;
     gap: 20px;
     justify-content: center;
+    margin-top: 15px;    
   }
 
   .tipos button {
     background-color: #ffcc00; 
     color:  rgb(210, 22, 5);
-    border: 2px solid #333;  
+    border: 2px dashed #0004f5;  
     padding: 5px 10px; 
     cursor: pointer; 
   }
