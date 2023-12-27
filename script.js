@@ -58,6 +58,7 @@ const pintarPokemons = (lista) => {
       <span class="id" >${pokemon.id}</span>
       `;
 //esto hace que al fin se vea todo en la pantalla. He añadido lo de botones al tipo.
+
     listaLi.addEventListener("click", () => {
       pokemonCartas(pokemon);
     }); 
