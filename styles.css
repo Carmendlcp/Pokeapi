@@ -1,23 +1,18 @@
 body{
     background-image: url(./imágenes/fondo4.png);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-h1{          
-    background-color:red;
-    opacity: 0.7;
+nav{
+    background-color: rgb(226, 4, 4);
+    justify-content: center;
     height: 80px;
-    font-family: 'Pokemon Solid', sans-serif;
-    border: 5px solid rgba(251, 255, 0, 0.374);
-    color: rgb(210, 210, 5);
     text-align: center;
-    display: flex;
-}
+    border: 2px solid;
+    font-family: 'Pokemon Solid', sans-serif;
 
-.nav{
-    margin-left: 200px;
-    opacity: 1;
-    display: flex;
-    flex-wrap: wrap; 
 }
 
 ol{
@@ -58,9 +53,8 @@ li .img {
     justify-content: center; 
     align-items: center; 
     border: 6px groove rgb(210, 22, 5);
-    background-color: rgb(245, 208, 160);
-    
-  }
+    background-color: rgb(245, 208, 160); 
+}
   
 li .nombre {
     display: flex;
@@ -79,30 +73,14 @@ li .tipos {
     margin-top: 15px;    
   }
 
-  .tipos button {
+.tipos button {
     background-color: #ffcc00; 
     color:  rgb(210, 22, 5);
     border: 2px dashed #0004f5;  
     padding: 5px 10px; 
     cursor: pointer; 
-  }
-
-.buscador {
-    display: inline;
-    margin-left: 200px; 
-    
 }
 
-.buscador input {
-    padding: 5px;
-    margin-right: 5px; 
-}
-
-.buscador button {
-    padding: 5px;
-    cursor: pointer;
-    }
-    
 .imgCarga{
   width: 40%;   
   position: absolute;
@@ -116,87 +94,3 @@ li .tipos {
     color:  #0004f5;  
     background-color: rgb(245, 208, 160);
 }
-
-  @media screen and (max-width: 600px) {
-   
-    .nav{
-        display: none;
-    }
-
-    h1{          
-        background-color:red;
-        opacity: 0.7;      
-        font-family: 'Pokemon Solid', sans-serif;
-        border: 5px solid rgba(251, 255, 0, 0.374);
-        color: rgb(210, 210, 5);
-        text-align: center;
-        display: flex;
-    }
-    
-    ol{
-        font-family: 'Pokemon Solid', sans-serif;
-        display: flex;
-        flex-wrap: wrap;
-    }
-    
-    li{
-        background-color: rgb(164, 149, 248);
-        padding: 2px;
-        margin: 5px;
-        border: 1px solid black;
-        list-style: none;
-        width: 20%;
-        height: 30%;
-        transition: transform 0.4s ease; 
-        transition: background-color 0.5s ease;
-    }
-    
-    li:hover {
-        transform: scale(1.2);
-        background-color: #543ff6;
-    }
-    
-    li .id {
-        display: flex;
-        justify-content: center; 
-        align-items: center; 
-        color: #ffcc00;
-        margin-top: 5px;    
-    }
-      
-    li .img {
-        display: flex;
-        justify-content: center; 
-        align-items: center; 
-        border: 6px groove rgb(210, 22, 5);
-        background-color: rgb(245, 208, 160);
-        
-      }
-      
-    li .nombre {
-        display: flex;
-        justify-content: center; 
-        align-items: center; 
-        text-size-adjust: 30px;
-        text-transform:uppercase;
-        color: rgb(210, 22, 5);
-        
-      }
-      
-    li .tipos {
-        display: flex;
-        gap: 10px;
-        justify-content: center;
-        margin-top: 5px;    
-      }
-    
-      .tipos button {
-        background-color: #ffcc00; 
-        color:  rgb(210, 22, 5);
-        border: 2px dashed #0004f5;  
-        padding: 5px 10px; 
-        cursor: pointer; 
-      }
-
-
-  }
