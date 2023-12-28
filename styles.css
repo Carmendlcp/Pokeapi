@@ -12,7 +12,23 @@ nav{
     text-align: center;
     border: 2px solid;
     font-family: 'Pokemon Solid', sans-serif;
+    font-size: 30px;
+    
+}
 
+h1{
+    text-align: center;
+    color: #0004f5; 
+    font-family: 'Pokemon Solid', sans-serif;
+    font-size: 60px;
+    -webkit-text-stroke: 2px #ffcc00;
+}
+
+a{
+    margin-right: 50px;
+    margin-left: 50px;
+    text-decoration: none;
+    -webkit-text-stroke: 0.3px #ffcc00;;
 }
 
 ol{
@@ -92,5 +108,5 @@ li .tipos {
 #pokedex{
     font-size: 22px;
     color:  #0004f5;  
-    background-color: rgb(245, 208, 160);
+    justify-content: center;
 }
