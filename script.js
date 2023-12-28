@@ -46,6 +46,7 @@ const pokemonCartas = (pokemon) => {
 const pintarPokemons = (lista) => {
   //console.log("pintar", lista);
   let crearPokemonOl$$ = document.querySelector("ol");
+  crearPokemonOl$$.innerHTML = "";
 
   for (let i = 0; i < lista.length; i++) {
     const pokemon = lista[i];
@@ -67,40 +68,21 @@ const pintarPokemons = (lista) => {
     crearPokemonOl$$.appendChild(listaLi);
   }
 };
-//quiero crear un buscador de pokemons
-const buscadorPokemons = async () => {
-  const nombrePokemon = document.querySelector('#pokemonInput').value.toLowerCase();
-  const resultadoBusqueda = document.querySelector('#pokedex');
- 
-
-  if (nombrePokemon.trim() !== '') { //se usa trim para eliminar los espacios en blanco
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${nombrePokemon}`);
-    const result = await response.json();
-    resultadoBusqueda.textContent = ''; // Limpia los resultados anteriores
-    // ahora tenemos que pintar el resultado  
-    resultadoBusqueda.innerHTML = `Nombre: ${result.name}<br>Altura: ${result.height}<br>Peso: ${result.weight}`;
-  } else {
-    //Cuando el campo está vacío:
-    const resultadoBusqueda = document.querySelector('#pokedex');
-    resultadoBusqueda.innerHTML = 'Nombre del Pokemon';
-  }
+//quiero crear un buscador de pokemons que filtre.
+const cogerInput = (pokemons) => {
+const input$$ = document.querySelector("#inputBusqueda")
+input$$.addEventListener("input", () => filtrarPokemons (pokemons, input$$.value));
 };
-
+const filtrarPokemons = (arrayParaFiltrar, filtro) => {
+  let pokemonsFiltrados = arrayParaFiltrar.filter((pokemons) => pokemons.nombre.toLowerCase().includes(filtro.toLowerCase()))
+  pintarPokemons(pokemonsFiltrados)
+};
+/////////////////////////////////////////////////////////////////
 const pokeApi = async () => {
   const lista = await pokeLista();
-  //console.log(lista);
   const pokemonsMapeados = mapearPokemons(lista);
   pintarPokemons(pokemonsMapeados);
-
-  const buscadorPokemonsDiv = document.createElement('div');
-  buscadorPokemonsDiv.classList.add('buscador');
-
-  buscadorPokemonsDiv.innerHTML = `
-  <input type="text" id="pokemonInput" placeholder="Nombre del Pokémon">
-  <button onclick="buscadorPokemons()">Buscar</button>
-`;
-
-nav$$.appendChild(buscadorPokemonsDiv);
+  cogerInput(pokemonsMapeados);
 };
 
 pokeApi();
