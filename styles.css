@@ -5,6 +5,17 @@ body{
     justify-content: center;
 }
 
+main{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#pokedex{
+    font-size: 22px;
+    color:  #0004f5;  
+    justify-content: center;
+}
+
 nav{
     background-color: rgb(226, 4, 4);
     justify-content: center;
@@ -13,7 +24,14 @@ nav{
     border: 2px solid;
     font-family: 'Pokemon Solid', sans-serif;
     font-size: 30px;
-    
+}
+
+#inputBusqueda{
+    width: 15%; 
+    margin: 0 auto; 
+    display: block;
+    background-color: rgb(164, 149, 248);
+    border: 3px solid #ffcc00;;
 }
 
 h1{
@@ -28,7 +46,7 @@ a{
     margin-right: 50px;
     margin-left: 50px;
     text-decoration: none;
-    -webkit-text-stroke: 0.3px #ffcc00;;
+    -webkit-text-stroke: 0.3px #ffcc00;
 }
 
 ol{
@@ -105,8 +123,3 @@ li .tipos {
   transform: translate(-50%, -50%);
 }
 
-#pokedex{
-    font-size: 22px;
-    color:  #0004f5;  
-    justify-content: center;
-}

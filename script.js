@@ -1,5 +1,4 @@
 const pokedexLista = document.querySelector("#pokedex");
-//enlazo el archivo, aunque no estoy segura de si esto es necesario
 
 const h1$$ = document.querySelector('h1');
 const nav$$ = document.createElement('nav');
@@ -16,7 +15,7 @@ const pokeLista = async () => {
    img$$.classList.add('imgCarga');
    pokedexLista.appendChild(img$$);
 
-  for (let i = 1; i < 152; i++) {
+  for (let i = 1; i < 500; i++) {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
     const result = await response.json();
     pokemones.push(result);
@@ -27,7 +26,6 @@ const pokeLista = async () => {
 };
 
 const mapearPokemons = (pokemonsSinMapear) => {
-  //console.log("función mapear", pokemonsSinMapear);
   const pokemonsMapeados = pokemonsSinMapear.map((pokemon) => ({
     nombre: pokemon.name,
     foto: pokemon.sprites.front_default,
@@ -38,13 +36,7 @@ const mapearPokemons = (pokemonsSinMapear) => {
   //Con esto consigo coger las propiedades que quiero de cada pokemon. Se verán tmb en consola.
 };
 
-const pokemonCartas = (pokemon) => {
-  console.log("Este es el pokemon", pokemon.nombre, ":", pokemon);
-  //esto me imprime por consola la info de cada carta al hacer click. No se si realmente es innecesario para el usuario
-};
-
 const pintarPokemons = (lista) => {
-  //console.log("pintar", lista);
   let crearPokemonOl$$ = document.querySelector("ol");
   crearPokemonOl$$.innerHTML = "";
 
@@ -60,14 +52,10 @@ const pintarPokemons = (lista) => {
       `;
 //esto hace que al fin se vea todo en la pantalla. He añadido lo de botones al tipo.
 
-    listaLi.addEventListener("click", () => {
-      pokemonCartas(pokemon);
-    });
-    //Esto es lo de la info de cada carta al hacer click. Pero solo se ve en consola
-
     crearPokemonOl$$.appendChild(listaLi);
   }
 };
+
 //quiero crear un buscador de pokemons que filtre.
 const cogerInput = (pokemons) => {
 const input$$ = document.querySelector("#inputBusqueda")
